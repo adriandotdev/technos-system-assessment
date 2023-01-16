@@ -61,7 +61,7 @@
                         </div>
                     </div>
 
-                    <p class="py-0 text-primary">Register a new membership</p>
+                    <a href="http://localhost:8080/technos-system-assessment/views/signup.php" class="pb-4 ps-3 text-primary text-decoration-none">Register a new membership</a>
                 </div>
 
             </form>
