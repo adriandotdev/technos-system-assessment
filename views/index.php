@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <main class="container d-flex flex-column align-items-center">
+    <main class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
         <section class="text-center">
-            <h1>Welcome to Technos System</h1>
-            <p>Providing Best and Quality Products</p>
+            <h1 id="h1-home-title" class="display-1 fw-bold">Welcome to Technos System</h1>
+            <p class="fs-1">Providing Best Quality Products</p>
         </section>
         <section>
-            <button class="btn btn-primary">Login</button>
-            <button class="btn btn-outline-primary">Sign Up</button>
+            <a href="http://localhost:8080/technos-system-assessment/views/login.php" role="button" class="btn btn-primary">Login</a>
+            <a role="button" class="btn btn-outline-primary">Sign Up</a>
         </section>
     </main>
 
