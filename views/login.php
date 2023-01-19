@@ -1,3 +1,22 @@
+<?php include '../config/database_config.php' ?>
+
+<?php
+
+session_start();
+
+if (isset($_POST['submit'])) {
+
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = $_POST['password'];
+
+    if ($email === 'nads@gmail.com' && $password === 'nads') {
+
+        $_SESSION['email'] = $email;
+        $_SESSION['username'] = 'Nads Marcelo';
+        header('Location: ../extras/dashboard.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +29,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-light">
 
     <main class="container min-vh-100 d-flex align-items-center">
 
@@ -21,7 +40,7 @@
             </section>
 
             <p class="text-center text-muted">Sign in to start your session</p>
-            <form class="container px-3" action="">
+            <form class="container px-3" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
 
                 <div class="row my-0 gap-3">
                     <div class="col-12 input-group px-3">
@@ -55,7 +74,7 @@
                             </div>
 
                             <div class="col-5 text-end">
-                                <input style="max-width: 5.6rem;" class="w-100 btn btn-primary" type="submit" value="Sign In">
+                                <input style="max-width: 5.6rem;" class="w-100 btn btn-primary" type="submit" name="submit" value="Sign In">
                                 <!-- <a style="max-width: 5.6rem;" href="" role="button" class="w-100 btn btn-primary">Sign In</a> -->
                             </div>
                         </div>

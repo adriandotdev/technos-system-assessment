@@ -1,3 +1,5 @@
+<?php include '../config/database_config.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,10 +24,11 @@
             </section> -->
 
             <p class="text-center text-muted">Register a new membership</p>
-            <form class="container" action="">
+            <form id="sign-up-form" class="container" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
 
                 <div class="row my-0 gap-3">
 
+                    <!-- Fullname Input Field -->
                     <div class="col-12 input-group px-3">
                         <input required aria-required placeholder="Full name" class="form-control border-end-0" type="text" name="full-name" id="full-name">
                         <span class="input-group-text bg-white border-start-0">
@@ -33,8 +36,12 @@
                                 <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                             </svg>
                         </span>
+                        <div class="invalid-feedback">
+                            This is required field.
+                        </div>
                     </div>
 
+                    <!-- Email Input Field -->
                     <div class="col-12 input-group px-3">
                         <input required aria-required placeholder="Email" class="form-control border-end-0" type="email" name="email" id="email">
                         <span class="input-group-text bg-white border-start-0">
@@ -42,7 +49,11 @@
                                 <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
                             </svg>
                         </span>
+                        <div id="email-error-message" class="invalid-feedback">
+                            This is required field.
+                        </div>
                     </div>
+                    <!-- Password Input Field -->
                     <div class="col-12 input-group px-3">
                         <input required aria-required="required" placeholder="Password" class="form-control border-end-0" type="password" name="password" id="password">
 
@@ -51,8 +62,13 @@
                                 <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
                             </svg>
                         </span>
+
+                        <div id="password-error-message" class="invalid-feedback">
+                            This is required field.
+                        </div>
                     </div>
 
+                    <!-- Password Retype Input Field -->
                     <div class="col-12 input-group px-3">
                         <input required aria-required="required" placeholder="Retype password" class="form-control border-end-0" type="password" name="confirm-password" id="confirm-password">
 
@@ -61,6 +77,10 @@
                                 <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
                             </svg>
                         </span>
+
+                        <div id="retypePass-error-message" class="invalid-feedback">
+                            This is required field.
+                        </div>
                     </div>
 
                     <div class="container px-3">
@@ -75,7 +95,7 @@
                             </div>
 
                             <div class="col-5 text-end">
-                                <input style="max-width: 5.6rem;" class="w-100 btn btn-primary" type="submit" value="Register">
+                                <input name="submit" id="signup-submit" style="max-width: 5.6rem;" class="w-100 btn btn-primary" type="submit" value="Register" disabled="true">
                                 <!-- <a style="max-width: 5.6rem;" href="" role="button" class="w-100 btn btn-primary">Sign In</a> -->
                             </div>
                         </div>
@@ -86,11 +106,14 @@
 
             </form>
         </div>
+        <div id="error-alert" style="max-width: 20rem;" class="alert alert-danger w-100 text-center p-4 d-none" role="alert">
+            Email is currently existing.
+        </div>
     </main>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="../javascript/form_validation.js"></script>
 </body>
 
 </html>
