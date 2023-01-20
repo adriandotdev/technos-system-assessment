@@ -37,7 +37,7 @@
                             </svg>
                         </span>
                         <div class="invalid-feedback">
-                            This is required field.
+                            This field is required.
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
                             </svg>
                         </span>
                         <div id="email-error-message" class="invalid-feedback">
-                            This is required field.
+                            This field is required.
                         </div>
                     </div>
                     <!-- Password Input Field -->
@@ -64,7 +64,7 @@
                         </span>
 
                         <div id="password-error-message" class="invalid-feedback">
-                            This is required field.
+                            This field is required.
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
                         </span>
 
                         <div id="retypePass-error-message" class="invalid-feedback">
-                            This is required field.
+                            This field is required.
                         </div>
                     </div>
 

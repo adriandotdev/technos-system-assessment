@@ -4,18 +4,11 @@
 
 session_start();
 
-if (isset($_POST['submit'])) {
+if (isset($_SESSION['username'])) {
 
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = $_POST['password'];
-
-    if ($email === 'nads@gmail.com' && $password === 'nads') {
-
-        $_SESSION['email'] = $email;
-        $_SESSION['username'] = 'Nads Marcelo';
-        header('Location: ../extras/dashboard.php');
-    }
+    header("Location: ../extras/dashboard.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +24,7 @@ if (isset($_POST['submit'])) {
 
 <body class="bg-light">
 
-    <main class="container min-vh-100 d-flex align-items-center">
+    <main class="container min-vh-100 d-flex flex-column justify-content-center gap-3 align-items-center">
 
         <div style="max-width: 22rem; border-top: 3px solid #0d6efd;" class="container-fluid px-0 rounded-2 pt-3 shadow-sm bg-white">
             <section class="text-center">
@@ -53,7 +46,7 @@ if (isset($_POST['submit'])) {
                             </svg>
                         </span>
                         <div id="retypePass-error-message" class="invalid-feedback">
-                            This is required field.
+                            This field is required.
                         </div>
                     </div>
 
@@ -68,7 +61,7 @@ if (isset($_POST['submit'])) {
                         </span>
 
                         <div id="retypePass-error-message" class="invalid-feedback">
-                            This is required field.
+                            This field is required.
                         </div>
                     </div>
 
@@ -94,8 +87,13 @@ if (isset($_POST['submit'])) {
                 </div>
 
             </form>
+
+        </div>
+        <div id="error-alert" style="max-width: 20rem;" class="alert alert-danger w-100 text-center p-4 d-none" role="alert">
+            Email address does not exist
         </div>
     </main>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
