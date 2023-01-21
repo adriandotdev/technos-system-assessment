@@ -1,6 +1,7 @@
 let email = document.getElementById('email');
 let password = document.getElementById('password');
 
+// Add events to the input fields that has a class of 'form-control'
 for (let i = 0; i < document.getElementsByClassName('form-control').length; i++) {
 
     let item = document.getElementsByClassName('form-control')[i];

@@ -90,7 +90,7 @@ if (isset($_SESSION['username'])) {
 
         </div>
         <div id="error-alert" style="max-width: 20rem;" class="alert alert-danger w-100 text-center p-4 d-none" role="alert">
-            Email address does not exist
+            We do not recognize your username and/or password. Please try again.
         </div>
     </main>
 

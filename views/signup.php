@@ -107,7 +107,7 @@
             </form>
         </div>
         <div id="error-alert" style="max-width: 20rem;" class="alert alert-danger w-100 text-center p-4 d-none" role="alert">
-            Email is currently existing.
+            Email currently exist
         </div>
     </main>
 
